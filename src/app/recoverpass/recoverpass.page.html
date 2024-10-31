@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Enter your email</ion-title>
+    <p class="subtitle">To reset your password</p>
+  </div>
+  
+  <form>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input placeholder="Enter oyur email" class="input"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 30p;">
+      <ion-fab-button [routerLink]="['/home']" >
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+   
+  </form>
+  </ion-content>
+  

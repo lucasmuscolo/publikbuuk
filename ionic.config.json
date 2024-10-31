@@ -1,0 +1,7 @@
+{
+  "name": "buukit",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
