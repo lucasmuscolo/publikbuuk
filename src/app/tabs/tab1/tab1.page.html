@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!--<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>tab1</ion-title>
   </ion-toolbar>
@@ -10,4 +10,40 @@
       <ion-title size="large">tab1</ion-title>
     </ion-toolbar>
   </ion-header>
+</ion-content>-->
+
+<!-- turno-lista.html -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Turnos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="onRefresh()">
+    <ion-refresher-content slot="top" pullingIcon="arrow-dropdown-circle">
+      <ion-label refreshingText="Actualizando turnos...">
+        <ion-icon name="sync"></ion-icon>
+      </ion-label>
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list lines="full">
+    <ion-item *ngFor="let turno of turnos" (click)="irATurno(turno)">
+      <ion-avatar item-start>
+        <img src="{{turno.usuario.imagen}}">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{turno.usuario.nombre}} {{turno.usuario.apellido}}</h2>
+        <p>Turno #{{turno.id}} - Fecha: {{turno.fecha | date: 'short'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón para agregar nuevo turno -->
+  <button ion-button item-end (click)="agregarTurno()">
+    <ion-icon name="add"></ion-icon>
+    Agregar Turno
+  </button>
 </ion-content>
